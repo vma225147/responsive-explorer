@@ -44,3 +44,14 @@ footer {
   padding: 1rem;
   background-color: #f4f4f4;
 }
+/* Style for the photo in the navigation bar */
+.nav-photo {
+    height: 60px; /* Adjust the size for better visibility */
+    width: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: 10px; /* Add some spacing from the top */
+    right: 20px; /* Add some spacing from the right */
+    border-radius: 50%; /* Make the photo circular (optional) */
+    border: 2px solid white; /* Add a border for better contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a polished look */
+  }
