@@ -22,6 +22,7 @@
   <main>
     <section>
       <h1>Explore Cars for Sale</h1>
+      <button id="clearStorage" style="margin-bottom: 20px;">Clear All Cars</button>
       <h2>New Cars</h2>
       <div id="newCars">
         <!-- New cars will be dynamically added here -->
@@ -61,6 +62,16 @@
         }
       });
     }
+
+    // Clear all localStorage data
+    document.getElementById('clearStorage').addEventListener('click', () => {
+      if (confirm('Are you sure you want to delete all cars?')) {
+        localStorage.clear();
+        newCars.innerHTML = '<p>No new cars posted yet.</p>';
+        usedCars.innerHTML = '<p>No used cars posted yet.</p>';
+        alert('All cars have been deleted.');
+      }
+    });
   </script>
 </body>
 </html>
