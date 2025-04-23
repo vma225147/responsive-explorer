@@ -22,13 +22,47 @@
   <main>
     <section>
       <h1>Welcome to fakecars.com</h1>
-      <p>We have a a fresh selection of new and used cars.</p>
+      <p>We have a fresh selection of new and used cars.</p>
       <li><a href="explore.html">Shop Now</a></li>
     </section>
-
+    <section>
+      <h2>Post Your Car for Sale</h2>
+      <form id="carForm">
+        <label for="carName">Car Name:</label>
+        <input type="text" id="carName" name="carName" required>
+        <label for="carPrice">Price:</label>
+        <input type="number" id="carPrice" name="carPrice" required>
+        <label for="carDescription">Description:</label>
+        <textarea id="carDescription" name="carDescription" required></textarea>
+        <button type="submit">Post Car</button>
+      </form>
+    </section>
   </main>
   <footer>
     <p>&copy; fakecars.com</p>
   </footer>
+  <script>
+    // Save car data to localStorage
+    document.getElementById('carForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const carName = document.getElementById('carName').value;
+      const carPrice = document.getElementById('carPrice').value;
+      const carDescription = document.getElementById('carDescription').value;
+
+      const car = { name: carName, price: carPrice, description: carDescription };
+
+      // Retrieve existing cars from localStorage
+      const cars = JSON.parse(localStorage.getItem('cars')) || [];
+      cars.push(car);
+
+      // Save updated cars list to localStorage
+      localStorage.setItem('cars', JSON.stringify(cars));
+
+      // Clear the form
+      document.getElementById('carForm').reset();
+
+      alert('Your car has been posted!');
+    });
+  </script>
 </body>
-</html> 
+</html>

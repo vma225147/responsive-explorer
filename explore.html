@@ -21,12 +21,34 @@
   </header>
   <main>
     <section>
-      <h1>Explore Our Content</h1>
-      <p>Browse through our amazing collection of resources.</p>
+      <h1>Explore Cars for Sale</h1>
+      <div id="carList">
+        <!-- Cars will be dynamically added here -->
+      </div>
     </section>
   </main>
   <footer>
     <p>&copy; fakecars.com</p>
   </footer>
+  <script>
+    // Retrieve cars from localStorage and display them
+    const cars = JSON.parse(localStorage.getItem('cars')) || [];
+    const carList = document.getElementById('carList');
+
+    if (cars.length === 0) {
+      carList.innerHTML = '<p>No cars posted yet. Be the first to post your car!</p>';
+    } else {
+      cars.forEach(car => {
+        const carDiv = document.createElement('div');
+        carDiv.classList.add('car-item');
+        carDiv.innerHTML = `
+          <h2>${car.name}</h2>
+          <p><strong>Price:</strong> $${car.price}</p>
+          <p>${car.description}</p>
+        `;
+        carList.appendChild(carDiv);
+      });
+    }
+  </script>
 </body>
 </html>
