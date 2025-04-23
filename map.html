@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Map</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Leaflet.js CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<!-- Leaflet.js CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
 </head>
 <body>
   <header>
@@ -34,7 +28,7 @@
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script>
     // Initialize the map
-    const map = L.map('map').setView([51.505, -0.09], 13); // Default location: London
+    const map = L.map('map').setView([43.6126, -116.3915], 13); // Default location: Meridian, Idaho
 
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -42,8 +36,8 @@
     }).addTo(map);
 
     // Add a marker to the map
-    L.marker([51.505, -0.09]).addTo(map)
-      .bindPopup('Default Location: London')
+    L.marker([43.6126, -116.3915]).addTo(map)
+      .bindPopup('Default Location: Meridian, Idaho')
       .openPopup();
   </script>
 </body>
