@@ -3,37 +3,26 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #4D4D4D; /* Dark Liver */
+  color: #EAEAEA; /* Bright Gray */
 }
 
-main {
-  padding: 1rem;
-  margin-top: 70px; /* Add margin to avoid content overlapping with the fixed header */
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #f4f4f4;
-}
-
-/* Navigation bar styles */
 header {
-  background-color: #333;
-  color: white;
+  background-color: #370B55; /* Russian Violet */
+  color: #EAEAEA; /* Bright Gray */
   padding: 0.5rem 1rem;
-  position: fixed; /* Make the header fixed at the top */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Ensure the header spans the full width */
-  z-index: 1000; /* Ensure it stays above other elements */
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Vertically center content */
-  justify-content: space-between; /* Space out navigation and photo */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation list styles */
-nav ul {
+header nav ul {
   display: flex;
   justify-content: flex-start;
   list-style: none;
@@ -41,26 +30,86 @@ nav ul {
   padding: 0;
 }
 
-nav ul li {
+header nav ul li {
   margin-right: 1rem;
 }
 
-nav ul li a {
-  color: white;
+header nav ul li a {
+  color: #EAEAEA; /* Bright Gray */
   text-decoration: none;
   font-weight: bold;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+header nav ul li a:hover {
+  color: #AB74CF; /* Rich Lavender */
 }
 
-/* Style for the photo in the navigation bar */
 .nav-photo {
-  height: 40px; /* Adjust the size for better visibility */
-  width: auto; /* Maintain aspect ratio */
-  border-radius: 50%; /* Make the photo circular */
-  border: 2px solid white; /* Add a border for better contrast */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a polished look */
-  position: relative; /* Ensure it aligns properly within the header */
+  height: 40px;
+  width: auto;
+  border-radius: 50%;
+  border: 2px solid #EAEAEA; /* Bright Gray */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main {
+  padding: 1rem;
+  margin-top: 70px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #370B55; /* Russian Violet */
+  color: #EAEAEA; /* Bright Gray */
+}
+
+button {
+  background-color: #8136B2; /* Grape */
+  color: #EAEAEA; /* Bright Gray */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #AB74CF; /* Rich Lavender */
+}
+
+input, textarea, select {
+  background-color: #EAEAEA; /* Bright Gray */
+  color: #4D4D4D; /* Dark Liver */
+  border: 1px solid #8136B2; /* Grape */
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #AB74CF; /* Rich Lavender */
+}
+
+h1, h2, h3 {
+  color: #AB74CF; /* Rich Lavender */
+}
+
+.car-item {
+  background-color: #370B55; /* Russian Violet */
+  color: #EAEAEA; /* Bright Gray */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.car-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
