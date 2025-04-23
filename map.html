@@ -6,8 +6,6 @@
   <title>Map</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 </head>
 <body>
   <header>
@@ -19,6 +17,7 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <img src="project-photo.png" alt="Logo" class="nav-photo">
   </header>
   <main>
     <section>
@@ -29,11 +28,5 @@
   <footer>
     <p>&copy; 2023 Your Site Name</p>
   </footer>
-  <script>
-    const map = L.map('map').setView([51.505, -0.09], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-  </script>
 </body>
 </html>
