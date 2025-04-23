@@ -34,6 +34,13 @@
         <input type="number" id="carPrice" name="carPrice" required>
         <label for="carDescription">Description:</label>
         <textarea id="carDescription" name="carDescription" required></textarea>
+        <label for="carCondition">Condition:</label>
+        <select id="carCondition" name="carCondition" required>
+          <option value="New">New</option>
+          <option value="Used">Used</option>
+        </select>
+        <label for="carImage">Upload Image:</label>
+        <input type="file" id="carImage" name="carImage" accept="image/*" required>
         <button type="submit">Post Car</button>
       </form>
     </section>
@@ -45,23 +52,37 @@
     // Save car data to localStorage
     document.getElementById('carForm').addEventListener('submit', function (e) {
       e.preventDefault();
+
       const carName = document.getElementById('carName').value;
       const carPrice = document.getElementById('carPrice').value;
       const carDescription = document.getElementById('carDescription').value;
+      const carCondition = document.getElementById('carCondition').value;
+      const carImage = document.getElementById('carImage').files[0];
 
-      const car = { name: carName, price: carPrice, description: carDescription };
+      // Convert the image to a Base64 string
+      const reader = new FileReader();
+      reader.onload = function () {
+        const car = {
+          name: carName,
+          price: carPrice,
+          description: carDescription,
+          condition: carCondition,
+          image: reader.result // Base64 string of the image
+        };
 
-      // Retrieve existing cars from localStorage
-      const cars = JSON.parse(localStorage.getItem('cars')) || [];
-      cars.push(car);
+        // Retrieve existing cars from localStorage
+        const cars = JSON.parse(localStorage.getItem('cars')) || [];
+        cars.push(car);
 
-      // Save updated cars list to localStorage
-      localStorage.setItem('cars', JSON.stringify(cars));
+        // Save updated cars list to localStorage
+        localStorage.setItem('cars', JSON.stringify(cars));
 
-      // Clear the form
-      document.getElementById('carForm').reset();
+        // Clear the form
+        document.getElementById('carForm').reset();
 
-      alert('Your car has been posted!');
+        alert('Your car has been posted!');
+      };
+      reader.readAsDataURL(carImage);
     });
   </script>
 </body>

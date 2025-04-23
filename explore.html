@@ -22,8 +22,13 @@
   <main>
     <section>
       <h1>Explore Cars for Sale</h1>
-      <div id="carList">
-        <!-- Cars will be dynamically added here -->
+      <h2>New Cars</h2>
+      <div id="newCars">
+        <!-- New cars will be dynamically added here -->
+      </div>
+      <h2>Used Cars</h2>
+      <div id="usedCars">
+        <!-- Used cars will be dynamically added here -->
       </div>
     </section>
   </main>
@@ -33,20 +38,27 @@
   <script>
     // Retrieve cars from localStorage and display them
     const cars = JSON.parse(localStorage.getItem('cars')) || [];
-    const carList = document.getElementById('carList');
+    const newCars = document.getElementById('newCars');
+    const usedCars = document.getElementById('usedCars');
 
     if (cars.length === 0) {
-      carList.innerHTML = '<p>No cars posted yet. Be the first to post your car!</p>';
+      newCars.innerHTML = '<p>No new cars posted yet.</p>';
+      usedCars.innerHTML = '<p>No used cars posted yet.</p>';
     } else {
       cars.forEach(car => {
         const carDiv = document.createElement('div');
         carDiv.classList.add('car-item');
         carDiv.innerHTML = `
+          <img src="${car.image}" alt="${car.name}" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px;">
           <h2>${car.name}</h2>
           <p><strong>Price:</strong> $${car.price}</p>
           <p>${car.description}</p>
         `;
-        carList.appendChild(carDiv);
+        if (car.condition === 'New') {
+          newCars.appendChild(carDiv);
+        } else {
+          usedCars.appendChild(carDiv);
+        }
       });
     }
   </script>
