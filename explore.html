@@ -44,43 +44,5 @@
   <footer>
     <p>&copy; fakecars.com XXX-XXX-XXXX</p>
   </footer>
-  <script>
-    // Retrieve cars from localStorage and display them
-      // Retrieve cars from localStorage and display them
-  const cars = JSON.parse(localStorage.getItem('cars')) || [];
-  const newCars = document.getElementById('newCars');
-  const usedCars = document.getElementById('usedCars');
-
-  if (cars.length === 0) {
-    newCars.innerHTML = '<p>No new cars posted yet.</p>';
-    usedCars.innerHTML = '<p>No used cars posted yet.</p>';
-  } else {
-    cars.forEach(car => {
-      const carDiv = document.createElement('div');
-      carDiv.classList.add('car-item');
-      carDiv.innerHTML = `
-        <img src="${car.image}" alt="${car.name}">
-        <h2>${car.name}</h2>
-        <p><strong>Price:</strong> $${car.price}</p>
-        <p>${car.description}</p>
-      `;
-      if (car.condition === 'New') {
-        newCars.appendChild(carDiv);
-      } else {
-        usedCars.appendChild(carDiv);
-      }
-    });
-  }
-
-    // Clear all localStorage data
-    document.getElementById('clearStorage').addEventListener('click', () => {
-      if (confirm('Are you sure you want to delete all cars?')) {
-        localStorage.clear();
-        newCars.innerHTML = '<p>No new cars posted yet.</p>';
-        usedCars.innerHTML = '<p>No used cars posted yet.</p>';
-        alert('All cars have been deleted.');
-      }
-    });
-  </script>
 </body>
 </html>
