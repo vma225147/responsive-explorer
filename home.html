@@ -26,6 +26,43 @@
       <p>We have a fresh selection of new and used cars.</p>
       <button onclick="location.href='explore.html'">Shop Now</button>
     </section>
+    <section>
+      <h1>Sell Your Car</h1>
+      <form action="#" method="post" onsubmit="return false;">
+        <label for="car-name">Car Name:</label>
+        <input type="text" id="car-name" name="car-name" required><br><br>
+
+        <label for="price">Price ($):</label>
+        <input type="number" id="price" name="price" required><br><br>
+
+        <label for="picture">Picture:</label>
+        <input type="file" id="picture" name="picture" accept="image/*" required><br><br>
+
+        <label for="miles">Miles:</label>
+        <input type="number" id="miles" name="miles" required><br><br>
+
+        <label for="condition">Condition:</label>
+        <select id="condition" name="condition" required>
+          <option value="new">New</option>
+          <option value="used">Used</option>
+        </select><br><br>
+        <h1>More Info</h1>
+        <form action="#" method="post" onsubmit="return false;">
+          <label for="owner-name">Owner Name:</label>
+          <input type="text" id="owner-name" name="owner-name" required><br><br>
+      
+          <label for="contact-number">Contact Number:</label>
+          <input type="tel" id="contact-number" name="contact-number" required><br><br>
+      
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required><br><br>
+      
+          <label for="description">Car Description:</label><br>
+          <textarea id="description" name="description" rows="4" cols="50" placeholder="Provide additional details about the car..." required></textarea><br><br>
+      
+          <button type="submit">Submit</button>
+        </form>
+    </section>
   </main>
   <footer>
     <p>&copy; fakecars.com XXX-XXX-XXXX</p>
