@@ -117,3 +117,27 @@ h1, h2, h3 {
   height: 500px;
   width: 500px;
 }
+/* Grid layout for car sections */
+#newCars, #usedCars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between grid items */
+  margin-top: 20px;
+}
+
+.car-item {
+  background-color: #370B55; /* Russian Violet */
+  color: #EAEAEA; /* Bright Gray */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.car-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
