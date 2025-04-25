@@ -208,3 +208,16 @@ h1, h2, h3 {
     margin-bottom: 1rem;
   }
 }
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px; /* Adds spacing between images */
+  padding: 10px; /* Optional: Adds padding around the scrollable area */
+}
+
+.scroll-container img {
+  flex-shrink: 0;
+  width: 200px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+}
