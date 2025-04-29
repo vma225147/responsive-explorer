@@ -208,16 +208,30 @@ h1, h2, h3 {
     margin-bottom: 1rem;
   }
 }
-.scroll-container {
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.flex-container {
   display: flex;
-  overflow-x: auto;
-  gap: 10px; /* Adds spacing between images */
-  padding: 10px; /* Optional: Adds padding around the scrollable area */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #370B55; /* Example background color */
 }
 
-.scroll-container img {
-  flex-shrink: 0;
-  width: 200px; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Optional: Adds rounded corners */
+.flex-item {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-item li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
